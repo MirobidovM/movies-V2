@@ -161,7 +161,7 @@ let handlePrevPage = () => {
     renderMovies(KINOLAR.slice(limit * (page - 1), page * limit));
   }
 
-  if (page === 0) {
+  if (page === 1) {
     elPrevBtn.disabled = true;
   }
 };
