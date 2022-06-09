@@ -19,6 +19,7 @@
     <div class="container">
       <h2 class="text-center mt-3 fw-bold">Movies</h2>
 
+      <!-- category -->
       <form class="d-flex my-5 js-form">
         <select class="form-select category-select">
           <option value="all">All</option>
@@ -42,8 +43,26 @@
         <button class="btn btn-success ms-5" type="submit">Filter</button>
       </form>
 
+      <!-- bookmark button -->
+      <p>
+        <a
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          My bookmarks
+        </a>
+      </p>
+      <div class="collapse mb-3 w-50" id="collapseExample">
+        <ul class="list-unstyled bookmark-list"></ul>
+      </div>
+
       <ul class="list d-flex flex-wrap"></ul>
 
+      <!-- pagination -->
       <ul class="pagination my-5 justify-content-center">
         <li class="page-count page-link"></li>
         <li class="page-item">
@@ -53,12 +72,48 @@
           <button class="page-link next-btn" href="#">Next</button>
         </li>
       </ul>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              More
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2 class="modal-title"></h2>
+            <p class="modal-summary"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- card -->
     <template id="card-template">
       <div class="card m-1" style="width: 16rem">
         <img
           src="https://picsum.photos/300/100"
+          width="300"
+          height="180"
           class="card-img-top"
           alt="..."
         />
@@ -68,9 +123,27 @@
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <button class="btn btn-warning js-bookmark">Bookmark</button>
+          <button
+            type="button"
+            class="btn btn-primary js-more"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            More
+          </button>
         </div>
       </div>
+    </template>
+
+    <!-- bookmark -->
+    <template id="bookmark-template">
+      <li
+        class="d-flex justify-content-between border p-3 align-items-center rounded"
+      >
+        <h4 class="fw-bold m-0 bookmark-title">Movie name</h4>
+        <button class="btn btn-danger">Remove</button>
+      </li>
     </template>
 
     <script
