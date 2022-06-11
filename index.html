@@ -73,47 +73,34 @@
         </li>
       </ul>
 
-    <!-- modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              More
-            </button>
-          </div>
-          <div class="modal-body">
-            <h2 class="modal-title"></h2>
-            <p class="modal-summary"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
-              Close
-            </button>
-          </div>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="modal-title"></h2>
+        <p class="modal-summary"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
+</div>
+
+
 
     <!-- card -->
     <template id="card-template">
-      <div class="card m-1" style="width: 16rem">
+      <div class="card my-2" style="width: 16rem">
         <img
           src="https://picsum.photos/300/100"
           width="300"
-          height="180"
+          height="180"  
           class="card-img-top"
           alt="..."
         />
@@ -124,12 +111,7 @@
             bulk of the card's content.
           </p>
           <button class="btn btn-warning js-bookmark">Bookmark</button>
-          <button
-            type="button"
-            class="btn btn-primary js-more"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-          >
+          <button type="button" class="btn btn-primary js-more" data-bs-toggle="modal" data-bs-target="#exampleModal">
             More
           </button>
         </div>
