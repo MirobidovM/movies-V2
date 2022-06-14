@@ -1,109 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movies</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/main.min.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies</title>
 
-  <body>
-    <div class="container">
-      <h2 class="text-center mt-3 fw-bold">Movies</h2>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/main.min.css" />
+</head>
 
-      <!-- category -->
-      <form class="d-flex my-5 js-form">
-        <select class="form-select category-select">
-          <option value="all">All</option>
-        </select>
+<body>
 
-        <input
-          class="form-control mx-3 js-search"
-          type="text"
-          placeholder="Search by name"
-        />
-
-        <select class="form-select js-sort-select">
-          <option value="az">Aa-Zz</option>
-          <option value="za">Zz-Aa</option>
-          <option value="hl">10-1</option>
-          <option value="lh">1-10</option>
-          <option value="no">New-Old</option>
-          <option value="on">Old-New</option>
-        </select>
-
-        <button class="btn btn-success ms-5" type="submit">Filter</button>
-      </form>
-
-      <!-- bookmark button -->
-      <p>
-        <a
-          class="btn btn-primary"
-          data-bs-toggle="collapse"
-          href="#collapseExample"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-        >
-          My bookmarks
-        </a>
-      </p>
-      <div class="collapse mb-3 w-50" id="collapseExample">
-        <ul class="list-unstyled bookmark-list"></ul>
-      </div>
-
-      <ul class="list d-flex flex-wrap"></ul>
-
-      <!-- pagination -->
-      <ul class="pagination my-5 justify-content-center">
-        <li class="page-count page-link"></li>
-        <li class="page-item">
-          <button class="page-link prev-btn" href="#">Previous</button>
-        </li>
-        <li class="page-item">
-          <button class="page-link next-btn" href="#">Next</button>
-        </li>
-      </ul>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h2 class="modal-title"></h2>
-        <p class="modal-summary"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+  <div class="loadingio-spinner-spinner-owlg40828t js-loading">
+    <div class="ldio-4hje1nrwgqb">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
-</div>
+
+  <div class="container">
+    <h2 class="text-center mt-3 fw-bold">Movies</h2>
+
+    <!-- category -->
+    <form class="d-flex my-5 js-form">
+      <select class="form-select category-select">
+        <option value="all">All</option>
+      </select>
+
+      <input class="form-control mx-3 js-search" type="text" placeholder="Search by name" />
+
+      <select class="form-select js-sort-select">
+        <option value="az">Aa-Zz</option>
+        <option value="za">Zz-Aa</option>
+        <option value="hl">10-1</option>
+        <option value="lh">1-10</option>
+        <option value="no">New-Old</option>
+        <option value="on">Old-New</option>
+      </select>
+
+      <button class="btn btn-success ms-5" type="submit">Filter</button>
+    </form>
+
+    <!-- bookmark button -->
+    <p>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        My bookmarks
+      </a>
+    </p>
+    <div class="collapse mb-3 w-50" id="collapseExample">
+      <ul class="list-unstyled bookmark-list"></ul>
+    </div>
+
+    <ul class="list d-flex flex-wrap"></ul>
+
+    <!-- pagination -->
+    <ul class="pagination my-5 justify-content-center">
+      <li class="page-count page-link"></li>
+      <li class="page-item">
+        <button class="page-link prev-btn" href="#">Previous</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link next-btn" href="#">Next</button>
+      </li>
+    </ul>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="modal-title"></h2>
+            <p class="modal-summary"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
     <!-- card -->
     <template id="card-template">
       <div class="card my-2" style="width: 16rem">
-        <img
-          src="https://picsum.photos/300/100"
-          width="300"
-          height="180"  
-          class="card-img-top"
-          alt="..."
-        />
+        <img src="https://picsum.photos/300/100" width="300" height="180" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">
@@ -120,20 +119,17 @@
 
     <!-- bookmark -->
     <template id="bookmark-template">
-      <li
-        class="d-flex justify-content-between border p-3 align-items-center rounded"
-      >
+      <li class="d-flex justify-content-between border p-3 align-items-center rounded">
         <h4 class="fw-bold m-0 bookmark-title">Movie name</h4>
         <button class="btn btn-danger">Remove</button>
       </li>
     </template>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
     <script src="js/movies.js"></script>
     <script src="js/index.js"></script>
-  </body>
+</body>
+
 </html>

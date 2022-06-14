@@ -1,23 +1,24 @@
 let KINOLAR = movies.slice(0, 56);
-const elForm = document.querySelector(".js-form");
-const elCategorySelect = document.querySelector(".category-select");
-const elSearchInput = document.querySelector(".js-search");
-const elSortSelect = document.querySelector(".js-sort-select");
-const elList = document.querySelector(".list");
-const elCardTemplate = document.getElementById("card-template").content;
-const elPrevBtn = document.querySelector(".prev-btn");
-const elNextBtn = document.querySelector(".next-btn");
-const elPageCount = document.querySelector(".page-count");
-const elBookmarkTemplate = document.getElementById("bookmark-template").content;
-const elBookmarkList = document.querySelector(".bookmark-list");
-const elModalTitle = document.querySelector(".modal-title");
-const elModalSummary = document.querySelector(".modal-summary");
+const elForm = document.querySelector('.js-form');
+const elCategorySelect = document.querySelector('.category-select');
+const elSearchInput = document.querySelector('.js-search');
+const elSortSelect = document.querySelector('.js-sort-select');
+const elList = document.querySelector('.list');
+const elCardTemplate = document.getElementById('card-template').content;
+const elPrevBtn = document.querySelector('.prev-btn');
+const elNextBtn = document.querySelector('.next-btn');
+const elPageCount = document.querySelector('.page-count');
+const elBookmarkTemplate = document.getElementById('bookmark-template').content;
+const elBookmarkList = document.querySelector('.bookmark-list');
+const elModalTitle = document.querySelector('.modal-title');
+const elModalSummary = document.querySelector('.modal-summary');
+const elLoader = document.querySelector('.js-loading');
 
 let limit = 8;
 let page = 1;
 let maxPageCount = Math.ceil(KINOLAR.length / limit);
-let bookmarks = localStorage.getItem("bookmarks")
-  ? JSON.parse(localStorage.getItem("bookmarks"))
+let bookmarks = localStorage.getItem('bookmarks')
+  ? JSON.parse(localStorage.getItem('bookmarks'))
   : [];
 
 const sortFunctions = {
@@ -88,7 +89,7 @@ let renderCategories = () => {
   let allCategories = getMovieGenres(KINOLAR);
 
   allCategories.forEach((category) => {
-    let categoryOption = document.createElement("option");
+    let categoryOption = document.createElement('option');
 
     categoryOption.textContent = category;
 
@@ -100,17 +101,18 @@ let renderCategories = () => {
 
 renderCategories();
 
-let elWrapper = document.createDocumentFragment("");
+let elWrapper = document.createDocumentFragment('');
 
 let renderMovies = (arr) => {
+  elLoader.style.display = 'none';
   elList.innerHTML = null;
   arr.forEach((movie) => {
     const elCard = elCardTemplate.cloneNode(true);
 
-    let img = elCard.querySelector(".card-img-top");
-    let title = elCard.querySelector(".card-title");
-    let bookmark = elCard.querySelector(".js-bookmark");
-    let more = elCard.querySelector(".js-more");
+    let img = elCard.querySelector('.card-img-top');
+    let title = elCard.querySelector('.card-title');
+    let bookmark = elCard.querySelector('.js-bookmark');
+    let more = elCard.querySelector('.js-more');
 
     img.src = movie.bigPoster;
     title.textContent = movie.title;
@@ -130,9 +132,9 @@ let handleFilter = (evt) => {
   let searchValue = elSearchInput.value.trim();
   let sort = elSortSelect.value;
 
-  let regex = new RegExp(searchValue, "gi");
+  let regex = new RegExp(searchValue, 'gi');
 
-  if (category === "all") {
+  if (category === 'all') {
     filteredMovies = KINOLAR;
   } else {
     filteredMovies = KINOLAR.filter((movie) =>
@@ -185,7 +187,7 @@ let renderBookmarks = (arr) => {
   arr.forEach((bookmark) => {
     let bookmarkClone = elBookmarkTemplate.cloneNode(true);
 
-    let title = bookmarkClone.querySelector(".bookmark-title");
+    let title = bookmarkClone.querySelector('.bookmark-title');
 
     title.textContent = bookmark.title;
 
@@ -198,7 +200,7 @@ let renderBookmarks = (arr) => {
 };
 
 let handleListEvent = (evt) => {
-  if (evt.target.matches(".js-bookmark")) {
+  if (evt.target.matches('.js-bookmark')) {
     const foundMovie = KINOLAR.find(
       (movie) => movie.imdbId === evt.target.dataset.id
     );
@@ -211,9 +213,9 @@ let handleListEvent = (evt) => {
       bookmarks.push(foundMovie);
     }
 
-    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     renderBookmarks(bookmarks);
-  } else if (evt.target.matches(".js-more")) {
+  } else if (evt.target.matches('.js-more')) {
     const foundMovie = KINOLAR.find(
       (movie) => movie.imdbId === evt.target.dataset.id
     );
@@ -224,9 +226,9 @@ let handleListEvent = (evt) => {
   }
 };
 
-elList.addEventListener("click", handleListEvent);
+elList.addEventListener('click', handleListEvent);
 
-elPrevBtn.addEventListener("click", handlePrevPage);
-elNextBtn.addEventListener("click", handleNextPage);
-elForm.addEventListener("submit", handleFilter);
+elPrevBtn.addEventListener('click', handlePrevPage);
+elNextBtn.addEventListener('click', handleNextPage);
+elForm.addEventListener('submit', handleFilter);
 renderMovies(KINOLAR.slice(0, 8));
