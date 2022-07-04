@@ -92,6 +92,7 @@ let renderCategories = () => {
     let categoryOption = document.createElement('option');
 
     categoryOption.textContent = category;
+
     categoryOption.value = category;
 
     elCategorySelect.appendChild(categoryOption);
